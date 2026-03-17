@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Portfolio Webpage</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family: Arial, sans-serif;
+background:#f4f4f4;
+transition:0.3s;
+}
+
+.dark-mode{
+background:#121212;
+color:white;
+}
+
+.container{
+width:90%;
+margin:auto;
+padding:20px;
+}
+
+header{
+text-align:center;
+background:#333;
+color:white;
+padding:20px;
+}
+
+nav{
+text-align:center;
+background:#555;
+padding:10px;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+button{
+padding:8px 15px;
+margin-top:10px;
+cursor:pointer;
+}
+
+section{
+background:white;
+margin-top:20px;
+padding:20px;
+border-radius:8px;
+}
+
+.dark-mode section{
+background:#1e1e1e;
+}
+
+ul{
+padding-left:20px;
+}
+
+input{
+display:block;
+margin-top:10px;
+padding:8px;
+width:100%;
+max-width:300px;
+}
+
+.error{
+color:red;
+}
+
+@media (min-width:768px){
+.container{
+width:80%;
+}
+
+h1{
+font-size:36px;
+}
+}
+
+@media (min-width:1024px){
+.container{
+width:60%;
+}
+
+h1{
+font-size:42px;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>My Portfolio Website</h1>
+<button id="darkBtn">Dark Mode</button>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+<section id="about">
+<h2>About Me</h2>
+<p>My Self Ankit Varma, Student of Information Technology</p>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<ul>
+<li>JAVA</li>
+<li>DBMS</li>
+<li>JDBC</li>
+</ul>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<p>1. College Complaint Management System</p>
+<p>2. Auto Tank Shoot Game (Python)</p>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+
+<form id="contactForm">
+
+<input type="text" id="name" placeholder="Enter Name" required>
+
+<input type="email" id="email" placeholder="Enter Email" required>
+
+<button type="submit">Submit</button>
+
+<p class="error" id="error"></p>
+
+</form>
+
+<p>Email: av350971@gmail.com</p>
+<p>Mob: 7987361896</p>
+
+</section>
+
+</div>
+
+<script>
+
+// Dark Mode
+const darkBtn = document.getElementById("darkBtn");
+
+darkBtn.addEventListener("click", () => {
+document.body.classList.toggle("dark-mode");
+});
+
+// Form Validation
+const form = document.getElementById("contactForm");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const error = document.getElementById("error");
+
+form.addEventListener("submit", function(e){
+
+const name = nameInput.value.trim();
+const email = emailInput.value.trim();
+
+if(!name || !email){
+
+e.preventDefault();
+error.textContent = "Please fill all fields";
+
+}
+else{
+
+error.textContent = "";
+alert("Form Submitted Successfully!");
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
